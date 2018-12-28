@@ -119,7 +119,7 @@ jQuery(function() {
 	jQuery( document ).on( 'click', '.add_to_cart_button:not(.product_type_variable, .product_type_grouped, .single_add_to_cart_button)', function() {
 		var productdata = jQuery( this ).closest( '.product' ).find( '.gtm4wp_productdata' );
 
-		window[ gtm4wp_datalayer_name ].push({
+		console.log({
 			'event': 'gtm4wp.addProductToCartEEC',
 			'ecommerce': {
 				'currencyCode': gtm4wp_currency,
