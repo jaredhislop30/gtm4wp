@@ -119,7 +119,7 @@ jQuery(function() {
 	jQuery( document ).on( 'click', '.add_to_cart_button:not(.product_type_variable, .product_type_grouped, .single_add_to_cart_button)', function() {
 		var productdata = jQuery( this ).closest( '.product' ).find( '.gtm4wp_productdata' );
 
-		console.log({
+		window[ gtm4wp_datalayer_name ].push({
 			'event': 'gtm4wp.addProductToCartEEC',
 			'ecommerce': {
 				'currencyCode': gtm4wp_currency,
@@ -149,8 +149,8 @@ jQuery(function() {
 		var _product_currency   = jQuery( '[name=gtm4wp_currency]', _product_form ).val();
 		var _product_stocklevel = jQuery( '[name=gtm4wp_stocklevel]', _product_form ).val();
 
-		if ( _product_id.length > 0 ) {
-			// if ( gtm4wp_last_selected_product_variation ) {
+		if ( _product_var_id.length > 0 ) {
+			if ( gtm4wp_last_selected_product_variation ) {
 				console.log({
 					'event': 'gtm4wp.addProductToCartEEC',
 					'ecommerce': {
@@ -160,7 +160,7 @@ jQuery(function() {
 						}
 					}
 				});
-			// }
+			}
 /*
 			_product_var_id_val = _product_var_id.val();
 			_product_form_variations = _product_form.data( 'product_variations' );
@@ -199,7 +199,7 @@ jQuery(function() {
 			});
 */
 		} else {
-			window[ gtm4wp_datalayer_name ].push({
+			console.log({
 				'event': 'gtm4wp.addProductToCartEEC',
 				'ecommerce': {
 					'currencyCode': _product_currency,
