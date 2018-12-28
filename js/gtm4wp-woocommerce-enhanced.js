@@ -151,7 +151,7 @@ jQuery(function() {
 
 		if ( _product_var_id.length > 0 ) {
 			if ( gtm4wp_last_selected_product_variation ) {
-				window[ gtm4wp_datalayer_name ].push({
+				console.log({
 					'event': 'gtm4wp.addProductToCartEEC',
 					'ecommerce': {
 						'currencyCode': _product_currency,
