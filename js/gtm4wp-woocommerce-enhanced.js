@@ -149,7 +149,7 @@ jQuery(function() {
 		var _product_currency   = jQuery( '[name=gtm4wp_currency]', _product_form ).val();
 		var _product_stocklevel = jQuery( '[name=gtm4wp_stocklevel]', _product_form ).val();
 
-		if ( _product_var_id.length > 0 ) {
+		if ( _product_id.length > 0 ) {
 			if ( gtm4wp_last_selected_product_variation ) {
 				console.log({
 					'event': 'gtm4wp.addProductToCartEEC',
