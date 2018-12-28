@@ -150,7 +150,7 @@ jQuery(function() {
 		var _product_stocklevel = jQuery( '[name=gtm4wp_stocklevel]', _product_form ).val();
 
 		if ( _product_id.length > 0 ) {
-			if ( gtm4wp_last_selected_product_variation ) {
+			// if ( gtm4wp_last_selected_product_variation ) {
 				console.log({
 					'event': 'gtm4wp.addProductToCartEEC',
 					'ecommerce': {
@@ -160,7 +160,7 @@ jQuery(function() {
 						}
 					}
 				});
-			}
+			// }
 /*
 			_product_var_id_val = _product_var_id.val();
 			_product_form_variations = _product_form.data( 'product_variations' );
