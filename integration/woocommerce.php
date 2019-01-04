@@ -640,8 +640,8 @@ function gtm4wp_woocommerce_cart_item_remove_link_filter( $remove_from_cart_link
 		esc_attr( $GLOBALS["gtm4wp_cart_item_proddata"]["stocklevel"] )
 	);
 	$GLOBALS["gtm4wp_cart_item_proddata"] = '';
-
-	return gtm4wp_str_replace_first( 'href="', $cartlink_with_data, $remove_from_cart_link );
+	return $remove_from_cart_link."this is a test";
+	// return gtm4wp_str_replace_first( 'href="', $cartlink_with_data, $remove_from_cart_link );
 }
 
 function gtp4wp_woocommerce_reset_loop() {
