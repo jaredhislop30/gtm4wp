@@ -622,24 +622,6 @@ function gtm4wp_woocommerce_cart_item_product_filter( $product, $cart_item="", $
 }
 
 function gtm4wp_woocommerce_cart_item_remove_link_filter( $remove_from_cart_link ) {
-	if ( ! isset( $GLOBALS["gtm4wp_cart_item_proddata"] ) ) {
-		return $remove_from_cart_link;
-	}
-
-	if ( ! is_array( $GLOBALS["gtm4wp_cart_item_proddata"] ) ) {
-		return $remove_from_cart_link;
-	}
-
-	$cartlink_with_data = sprintf('data-gtm4wp_product_id="%s" data-gtm4wp_product_name="%s" data-gtm4wp_product_price="%s" data-gtm4wp_product_cat="%s" data-gtm4wp_product_url="%s" data-gtm4wp_product_variant="%s" data-gtm4wp_product_stocklevel="%s" href="',
-		esc_attr( $GLOBALS["gtm4wp_cart_item_proddata"]["id"] ),
-		esc_attr( $GLOBALS["gtm4wp_cart_item_proddata"]["name"] ),
-		esc_attr( $GLOBALS["gtm4wp_cart_item_proddata"]["price"] ),
-		esc_attr( $GLOBALS["gtm4wp_cart_item_proddata"]["category"] ),
-		esc_url(  $GLOBALS["gtm4wp_cart_item_proddata"]["productlink"] ),
-		esc_attr( $GLOBALS["gtm4wp_cart_item_proddata"]["variant"] ),
-		esc_attr( $GLOBALS["gtm4wp_cart_item_proddata"]["stocklevel"] )
-	);
-	$GLOBALS["gtm4wp_cart_item_proddata"] = '';
 	return $remove_from_cart_link."this is a test";
 	// return gtm4wp_str_replace_first( 'href="', $cartlink_with_data, $remove_from_cart_link );
 }
